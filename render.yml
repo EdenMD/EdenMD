@@ -1,0 +1,22 @@
+# This file defines the infrastructure for your bot on Render.
+# It's optional for a single service, but good practice for Infrastructure as Code.
+
+services:
+  - name: nyasha-whatsapp-bot # A unique name for your service
+    type: web # Specifies it's a web service (even if it doesn't listen on a public port for a bot)
+    env: node # Specifies the environment is Node.js
+    buildCommand: npm install # Command to run before the service starts (installs dependencies)
+    startCommand: node index.js # Command to start your bot
+    application
+    # healthCheckPath: / # You might add a health check path if your bot had a simple web server running
+    # If your bot needs to keep running and not just respond to HTTP,
+    # consider if a background worker might be a better fit depending on Render's plan types.
+    # However, 'web' type often works fine for persistent Node.js scripts.
+    
+    # Environment variables needed by your application
+    envVars:
+      - key: GEMINI_API_KEY # The name of the environment variable
+        sync: false # Set to false for secret keys - the VALUE will be set in the Render dashboard
+        # value: <your_gemini_api_key> # DO NOT hardcode your secret key here!
+        # The value should be set in the Render dashboard under Environment Variables.
+      # Add other environment variables here if needed
