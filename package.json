@@ -1,0 +1,27 @@
+{
+  "name": "nyasha-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "A WhatsApp bot with Nyasha persona using Baileys and Gemini API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "whatsapp-bot",
+    "baileys",
+    "gemini-api",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "@google/generative-ai": "^0.11.3",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
